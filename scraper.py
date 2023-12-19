@@ -18,6 +18,7 @@ class Scraper:
         player_data_list = []
 
         for page_num in range(0, total_pages + 1):
+            # Here you enter the URL of the Event Page (championship), and be careful because in the URL there is a "&" symbol at the end, and if forgotten, the code may not run correctly.
             page = f'https://fortnitetracker.com/events/epicgames_S28_SoloVictoryCashCup_BR?window=S28_SoloVictoryCashCup_Event3Round1_BR&page={page_num}'
             html = self.html_page(page)
             players = html.select('tr.trn-table__row')
